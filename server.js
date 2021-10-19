@@ -6,7 +6,11 @@ const { BadRequestError } = require("./app/helpers/errors");
 
 const app = express();
 
-app.use(cors({ origin: config.app.origins }));
+var corOptions = {
+    origin: "http://localhost:8081"
+   };
+
+app.use(cors(corOptions));
 
 app.use(express.json());
 
